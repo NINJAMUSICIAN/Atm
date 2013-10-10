@@ -11,12 +11,9 @@ public class Account{
 
 		this.pin = pin;
 		this.name = name;
-
 	}
 
-	public void initialBalance(double money){
-		balance = money;
-	}
+	public void initialBalance(double money){balance = money;}
 
 	public void withdraw(){
 		Scanner liger = new Scanner(System.in);
@@ -72,8 +69,6 @@ public class Account{
 		}else{
 			System.out.println("I'm sorry that is not the correct pin");
 		}
-
-
 	}
 
 	// checks if user knows current pin
