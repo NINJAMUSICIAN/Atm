@@ -61,24 +61,40 @@ public class Account{
 	}
 
 	public void changePin(){
-		
+		Scanner flow = new Scanner(System.in);
 
+		if(checkPinCorrect()){
+
+			System.out.println("What would you like to change your pin to? (cannot start with 0)");
+			int newPin = flow.nextInt();
+			pin = newPin;
+			System.out.println("Your new pin number is: " + pin);
+		}else{
+			System.out.println("I'm sorry that is not the correct pin");
+		}
 
 
 	}
 
+	// checks if user knows current pin
 	public boolean checkPinCorrect(){
 		boolean correctPassword;
 		Scanner nachos = new Scanner(System.in);
 
-		// checks if user knows current pin
+		
 		System.out.println("What is your current pin?");
 
 		int password = nachos.nextInt();
 
 		if(password == pin){
 			correctPassword = true;
+		} else {
+			correctPassword = false;
 		}
+
+		return correctPassword;
+
 	}
+
 
 }
